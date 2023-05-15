@@ -5,10 +5,10 @@
   display: flex;
   position: relative;
   margin-top: 125px;
-  @include tablet{
+  @include tablet {
     margin-top: 50px;
   }
-  @include desktop{
+  @include desktop {
     margin-top: 38px;
   }
 }
@@ -17,23 +17,23 @@
   width: 106px;
   background: $main-backgroud;
   border-radius: 16px 16px 0px 0px;
-  color:  $text-input-title-color;
+  color: $text-input-title-color;
   cursor: pointer;
 
-  @include tablet{
+  @include tablet {
     width: 115px;
   }
 }
 .active_link {
   background: $text-input-color;
-  border-top: 1px solid  $accent;
+  border-top: 1px solid $accent;
   color: $main-white;
 }
 .link__title {
   display: flex;
   justify-content: center;
 
-  font-family: 'Lato-Regular';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Calendar } from '../../DateInput/DateInput';
 import { getListOfTransactions } from '../../../redux/operations/cashflowOperations';
 import { Item } from './ExpenseBoardItem';
+import { Notify } from 'notiflix';
 import { getListOfCategory } from '../../../redux/operations/categoriesOperations';
 
 export const ExpensesList = () => {
@@ -13,34 +14,30 @@ export const ExpensesList = () => {
   const [dataIn, setDataIn] = useState(''); //данні по обраній транзакції
   const [dateFilter, setDateFilter] = useState(''); //обрані дати
   const [transactionData, setTransactionData] = useState([]); //отримання транзакцій
+  const [form, setForm] = useState();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getListOfCategory());
-  });
+  }, []);
 
   useEffect(() => {
     dispatch(getListOfTransactions(dateFilter)).then(data => {
       setTransactionData(data.payload);
     });
-  }, [dateFilter, dispatch, popupActive]);
+  }, [dateFilter]);
 
-  // console.log('on board', transactionData);
-
-  if (transactionData?.length === 0) return;
-
-  // console.log('board');
+  if (!transactionData || transactionData === []) return;
 
   return (
-    // <div className={s.background_img}>
-      <div className={s.container}>
-        <div className={s.wrapper}>
-          <Calendar onDate={setDateFilter} />
-          <StatisticsNav />
-          <ul className={s.expense_block}>
-            {typeof transactionData === 'object' ? (
-              transactionData?.map(item => (
+    <div className={s.container}>
+      <div className={s.wrapper}>
+        <Calendar onDate={setDateFilter} />
+        <StatisticsNav />
+        <ul className={s.expense_block}>
+          {typeof transactionData === 'object'
+            ? transactionData?.map(item => (
                 <Item
                   key={item._id}
                   {...item}
@@ -48,21 +45,17 @@ export const ExpensesList = () => {
                   setData={setDataIn}
                 />
               ))
-            ) : (
-              <p className={s.error_mes}>
-                You didn't have transaction on this period
-              </p>
-            )}
-          </ul>
-          {popupActive && (
-            <PopUp
-              isActive={popupActive}
-              setActive={setPopupActive}
-              setData={dataIn}
-            />
-          )}
-        </div>
+            : Notify.failure("You don't have transaction on this period")}
+        </ul>
+        {popupActive && (
+          <PopUp
+            isActive={popupActive}
+            setActive={setPopupActive}
+            setData={dataIn}
+            // formChange={setForm}
+          />
+        )}
       </div>
-    // </div>
+    </div>
   );
 };
