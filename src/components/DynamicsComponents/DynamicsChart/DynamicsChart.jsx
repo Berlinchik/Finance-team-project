@@ -174,6 +174,8 @@ const DynamicsChart = () => {
           }
         }),
         backgroundColor: '#6359e9',
+        borderColor: '#6359e9',
+        borderWidth: 1,
       },
       {
         data: labels.map((label, idx) => {
@@ -184,6 +186,8 @@ const DynamicsChart = () => {
           }
         }),
         backgroundColor: '#3a6af5',
+        borderColor: '#3a6af5',
+        borderWidth: 1,
       },
       {
         data: labels.map((label, idx) => {
@@ -194,6 +198,8 @@ const DynamicsChart = () => {
           }
         }),
         backgroundColor: '#f3f3f3',
+        borderColor: '#f3f3f3',
+        borderWidth: 1,
       },
     ],
   };
