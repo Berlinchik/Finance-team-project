@@ -14,19 +14,19 @@ export const ExpensesList = () => {
   const [dataIn, setDataIn] = useState(''); //данні по обраній транзакції
   const [dateFilter, setDateFilter] = useState(''); //обрані дати
   const [transactionData, setTransactionData] = useState([]); //отримання транзакцій
-  const [form, setForm] = useState();
+  // const [form, setForm] = useState();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getListOfCategory());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getListOfTransactions(dateFilter)).then(data => {
       setTransactionData(data.payload);
     });
-  }, [dateFilter]);
+  }, [dispatch, dateFilter]);
 
   if (!transactionData || transactionData === []) return;
 

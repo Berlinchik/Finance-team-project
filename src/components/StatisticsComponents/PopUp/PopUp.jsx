@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import s from './Popup.module.scss';
 import iconSvg from '../Svg';
 import clsx from 'clsx';
@@ -41,7 +41,7 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
     setForm(prevForm => {
       return {
         ...prevForm,
-        [name]: (value),
+        [name]: value,
       };
     });
   };
@@ -54,7 +54,7 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
     setForm(prevForm => {
       return {
         ...prevForm,
-        ['category']: value,
+        category: value,
       };
     });
   };
@@ -63,7 +63,7 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
     e.preventDefault();
     console.log('form', form);
     dispatch(putOneTransaction(form));
-    formChange(form)
+    formChange(form);
     setActive(false);
   };
   return (
