@@ -7,7 +7,7 @@ import iconSvg from '../StatisticsComponents/Svg';
 // CSS Modules, react-datepicker-cssmodules.css
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-export const Calendar = ({onDate}) => {
+export const Calendar = ({ onDate }) => {
   const [startDate, setStartDate] = useState(new Date());
   const ChangeInput = forwardRef(({ value, onClick }, ref) => (
     <button className={s.input_field} onClick={onClick} ref={ref}>
@@ -17,24 +17,22 @@ export const Calendar = ({onDate}) => {
   ));
 
   const year = startDate.getFullYear();
-  const month =startDate.getMonth()+1
+  const month = startDate.getMonth() + 1;
 
-  useEffect(()=>{
-      onDate({month, year})
-  },[onDate, year, month])
+  useEffect(() => {
+    onDate({ month, year });
+  }, [onDate, year, month]);
 
   return (
-      <DatePicker
-        dateFormat="MMMM, yyyy"
-        style={s.datePicker}
-        // startDate= //додати початок
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        showMonthYearPicker
-        customInput={<ChangeInput />}
-        wrapperClassName={s.calendar}
-        // minDate={subDays(new Date(), 5)} // add start tarnsaction
-        maxDate={new Date()}
-        />
+    <DatePicker
+      dateFormat="MMMM, yyyy"
+      style={s.datePicker}
+      // startDate= //додати початок
+      selected={startDate}
+      onChange={date => setStartDate(date)}
+      showMonthYearPicker
+      customInput={<ChangeInput />}
+      wrapperClassName={s.calendar}
+    />
   );
 };
