@@ -6,13 +6,6 @@ import { selectCustomerSavingStatistic } from 'redux/selectors/dynamicsDataSelec
 import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
 
-// const initState = {
-//   income: '00 000',
-//   expense: '00 000',
-//   accumulated: '00 000',
-//   plan: '00 000',
-//   planInProcent: '00%',
-// };
 const monthNames = [
   'January',
   'February',
