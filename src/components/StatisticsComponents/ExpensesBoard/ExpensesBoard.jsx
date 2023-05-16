@@ -41,6 +41,7 @@ export const ExpensesList = () => {
                 {...item}
                 setActive={setPopupActive}
                 setData={setDataIn}
+                setTransactionData={setTransactionData}
               />
             ))
           ) : (

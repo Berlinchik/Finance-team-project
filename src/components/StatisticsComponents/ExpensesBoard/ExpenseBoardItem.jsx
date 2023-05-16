@@ -13,6 +13,7 @@ export const Item = ({
   setActive,
   setData,
   type,
+  setTransactionData,
 }) => {
   const dispatch = useDispatch();
   const getPopUp = setTransData => {
@@ -39,9 +40,12 @@ export const Item = ({
             )}
           </li>
           <li className={s.icon_svg}>
-            {iconSvg('delete', 'white', '20', () =>
-              dispatch(deleteOneTransaction(_id))
-            )}
+            {iconSvg('delete', 'white', '20', () => {
+              setTransactionData(prevState => {
+                return prevState.filter(elem => elem._id !== _id);
+              });
+              return dispatch(deleteOneTransaction(_id));
+            })}
           </li>
         </ul>
       </div>
