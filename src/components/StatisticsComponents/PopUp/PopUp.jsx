@@ -20,15 +20,13 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
   };
   const [form, setForm] = useState(initialValues);
 
-  // console.log(categories);
   const getBackdropClass = () => clsx(s.backdrop, isActive && s.active);
 
   const handleChange = e => {
     const { name, value } = e.target;
-    console.log('name, value ', name, value);
     if (name === 'sum') {
       if (Boolean(Number(value)) === false) {
-        Notify.warning('Please, input number');
+        Notify.warning('Please, enter a number');
       } else {
         setForm(prevForm => {
           return {
@@ -47,10 +45,8 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
   };
 
   const handleSelect = data => {
-    // console.log(data)
     if (!data) return;
     const { name, value } = data;
-    console.log(name, value);
     setForm(prevForm => {
       return {
         ...prevForm,
@@ -61,7 +57,6 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('form', form);
     dispatch(putOneTransaction(form));
     formChange(form);
     setActive(false);

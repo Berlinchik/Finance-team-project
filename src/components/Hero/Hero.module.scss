@@ -1,114 +1,126 @@
 @import '../../assets/styles/utils/mixins';
 @import '../../assets/styles/utils/vars';
 
-.container{
-    // height: 100%;
-    height: calc(100vh - 72px);
-    position: relative;
-    padding-top: 60px;
-    
-    background-image: url('../../assets/img/hero-bg-mobile.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: bottom;
+.container {
+  // height: 100%;
+  height: calc(100vh - 72px);
+  position: relative;
+  padding-top: 60px;
 
-    @include container;
-    @include tablet{
-        //height: 100%;
-        padding-top: 72px;
-        margin-left: auto;
-        margin-right: auto;
-        background-image: url('../../assets/img/hero-bg-tablet.png');
-        background-size: 656px 566px;
+  background-image: url('../../assets/img/hero-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+
+  @include retina {
+    background-image: url('../../assets/img/hero-bg-mobile-2x.png');
+  }
+
+  @include container;
+  @include tablet {
+    //height: 100%;
+    padding-top: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../../assets/img/hero-bg-tablet.png');
+    background-size: 656px 566px;
+
+    @include retina {
+      background-image: url('../../assets/img/hero-bg-tablet-2x.png');
     }
-    @include desktop{
-        padding-top: 142px;
-        //height: calc(100vh - 72px);
-        background-image: url('../../assets/img/hero-bg-desktop.png');
-        background-size: 616px 595px;
-        background-position-x: right;
-    }
+  }
+  @include desktop {
+    padding-top: 142px;
+    //height: calc(100vh - 72px);
+    background-image: url('../../assets/img/hero-bg-desktop.png');
+    background-size: 616px 595px;
+    background-position-x: right;
+
+    // @include retina {
+    //   background-image: url('../../assets/img/hero-bg-desktop-2x.png');
+    // }
+  }
 }
 
-.title{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    //margin-bottom: 124px;
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  //margin-bottom: 124px;
 
-    font-family: 'Unbounded-Medium';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.42;
+  font-family: 'Unbounded-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.42;
 
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    font-feature-settings: 'liga' off;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-feature-settings: 'liga' off;
 
-    color: $main-white;
+  color: $main-white;
 
-    @include tablet{
-        width: 646px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 124px;
+  @include tablet {
+    width: 646px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 124px;
 
-        font-size: 44px;
-        line-height: 1.27;
-    }
+    font-size: 44px;
+    line-height: 1.27;
+  }
 
-    @include desktop{
-        width: 646px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        margin-bottom: 0px;
+  @include desktop {
+    width: 646px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 0px;
 
-        font-size: 44px;
-        line-height: 1.27;
-    }
+    font-size: 44px;
+    line-height: 1.27;
+  }
 }
 
-.textTwo{
-    @include tablet{
-        font-size: 48px;
-        line-height: 1;
-    }
-    @include desktop{
-        font-size: 48px;
-        line-height: 1;
-    }
-}
-
-.text{
-    padding: 10px 20px;
-
-    font-family: 'Unbounded-Medium';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
+.textTwo {
+  @include tablet {
+    font-size: 48px;
     line-height: 1;
+  }
+  @include desktop {
+    font-size: 48px;
+    line-height: 1;
+  }
+}
 
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    font-feature-settings: 'liga' off;
+.text {
+  padding: 10px 20px;
 
-    color: $main-white;
+  font-family: 'Unbounded-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
 
-    background: $accent;
-    border-radius: 60px;
-    @include tablet{
-        font-size: 48px;
-    }
-    @include desktop{
-        font-size: 48px;
-    }
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-feature-settings: 'liga' off;
+
+  color: $main-white;
+
+  background: $accent;
+  border-radius: 60px;
+  @include tablet {
+    font-size: 48px;
+  }
+  @include desktop {
+    font-size: 48px;
+  }
 }
 
 // .icon{

@@ -3,14 +3,12 @@ import './SelectCategory.scss';
 import { getListOfCategory } from 'redux/operations/categoriesOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-// import { useState } from 'react';
 import Icon from '../Icon/Icon';
 
 // categories замість options
 
 export default function SelectCategory({ getChange }) {
   const categories = useSelector(state => state?.categories?.categories);
-  // console.log(categories);
   const dispatch = useDispatch();
 
   const option = categories?.map(({ name, title }) => {
@@ -21,7 +19,6 @@ export default function SelectCategory({ getChange }) {
   });
 
   useEffect(() => {
-    // console.log('CashflowPage');
     dispatch(getListOfCategory());
   }, [dispatch]);
 
@@ -29,13 +26,7 @@ export default function SelectCategory({ getChange }) {
   const IconOption = props => (
     <Option {...props}>
       {' '}
-      <Icon
-        name={props.data.value}
-        width={18}
-        height={18}
-        // secondaryClassName={s.categoryIcon}
-      />{' '}
-      {props.data.label}{' '}
+      <Icon name={props.data.value} width={18} height={18} /> {props.data.label}{' '}
     </Option>
   );
 
