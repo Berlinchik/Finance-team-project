@@ -118,7 +118,7 @@ export const putOneTransaction = createAsyncThunk(
       const transaction = await putOneTransactionApi(transactionIdAndData);
       return transaction;
     } catch (error) {
-      throw Error(error.message);
+      rejectWithValue(error.message);
     }
   }
 );

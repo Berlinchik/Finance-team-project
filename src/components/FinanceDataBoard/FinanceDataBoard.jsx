@@ -29,18 +29,10 @@ export const FinanceDataBoard = ({
   const dispatch = useDispatch();
 
   const handleInputChange = e => {
-    // console.log(sum);
     setSum(e.target.value);
   };
 
   const handleAddIncome = () => {
-    // const form = {
-    //   sum: Number(sum),
-    //   type: 'income',
-    // };
-    // dispatch(postTransaction(form));
-    // handleModalWindowClose();
-
     if (sum === 0) {
       setIsSum(true);
     } else {
@@ -48,7 +40,6 @@ export const FinanceDataBoard = ({
         sum: Number(sum),
         type: 'income',
       };
-      // console.log(sum);
       dispatch(postTransaction(form));
       handleModalWindowClose();
       setSum(0);
@@ -60,8 +51,6 @@ export const FinanceDataBoard = ({
 
   const handleAddBalance = () => {
     if (balance) console.log('You already have the balance');
-
-    // console.log(typeof sum);
 
     if (sum === 0) {
       setIsSum(true);

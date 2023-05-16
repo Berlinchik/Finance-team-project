@@ -7,18 +7,18 @@ import SelectCategory from './Select';
 import { Notify } from 'notiflix';
 import { useDispatch } from 'react-redux';
 
-export const PopUp = ({ isActive, setActive, setData, formChange }) => {
-  const { _id, date, comment, category, sum, type } = setData;
+export const PopUp = ({ isActive, setActive, data, setTransactionData }) => {
+  // const { _id, date, comment, category, sum, type } = setData;
   const dispatch = useDispatch();
-  const initialValues = {
-    _id,
-    date,
-    category,
-    comment,
-    sum,
-    type,
-  };
-  const [form, setForm] = useState(initialValues);
+  // const initialValues = {
+  //   _id,
+  //   date,
+  //   category,
+  //   comment,
+  //   sum,
+  //   type,
+  // };
+  const [form, setForm] = useState(data);
 
   const getBackdropClass = () => clsx(s.backdrop, isActive && s.active);
 
@@ -26,7 +26,7 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
     const { name, value } = e.target;
     if (name === 'sum') {
       if (Boolean(Number(value)) === false) {
-        Notify.warning('Please, enter a number');
+        Notify.warning('Please, input number');
       } else {
         setForm(prevForm => {
           return {
@@ -46,11 +46,10 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
 
   const handleSelect = data => {
     if (!data) return;
-    const { name, value } = data;
     setForm(prevForm => {
       return {
         ...prevForm,
-        category: value,
+        category: data.value,
       };
     });
   };
@@ -58,9 +57,17 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(putOneTransaction(form));
-    formChange(form);
     setActive(false);
+    setTransactionData(prevState => {
+      const indexOfUpdatedExpense = prevState.findIndex(
+        elem => elem._id === form._id
+      );
+      const expenses = prevState.filter(elem => elem._id !== form._id);
+      expenses.splice(indexOfUpdatedExpense, 0, form);
+      return [...expenses];
+    });
   };
+
   return (
     <div
       className={getBackdropClass()}
@@ -79,8 +86,8 @@ export const PopUp = ({ isActive, setActive, setData, formChange }) => {
             <label>
               <span className={s.labelTitle}>Per category</span>
               <SelectCategory
-                currentCategory={category}
-                changeCategory={handleSelect}
+                currentCategory={form.category}
+                setCategory={handleSelect}
               />
             </label>
           </div>
