@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/Finance-team-project/static/css/main.687886ab.css",
-    "main.js": "/Finance-team-project/static/js/main.2949394c.js",
+    "main.css": "/Finance-team-project/static/css/main.b0a1587c.css",
+    "main.js": "/Finance-team-project/static/js/main.a0f13ba1.js",
+    "static/media/hero-bg-tablet-2x.png": "/Finance-team-project/static/media/hero-bg-tablet-2x.4d7bd48f85bbd143b40b.png",
     "static/media/Lato-Semibold.ttf": "/Finance-team-project/static/media/Lato-Semibold.dab63590f439194ec956.ttf",
     "static/media/Lato-Bold.ttf": "/Finance-team-project/static/media/Lato-Bold.9cfae71062337c38b44f.ttf",
     "static/media/Lato-Regular.ttf": "/Finance-team-project/static/media/Lato-Regular.cbcf73593dd54516d4b3.ttf",
     "static/media/Lato-Medium.ttf": "/Finance-team-project/static/media/Lato-Medium.70b0923d7cb977f41dd4.ttf",
     "static/media/Lato-Black.ttf": "/Finance-team-project/static/media/Lato-Black.2678bc5be691402b8993.ttf",
+    "static/media/hero-bg-mobile-2x.png": "/Finance-team-project/static/media/hero-bg-mobile-2x.f7ae2aee48484df993b2.png",
     "static/media/hero-bg-desktop.png": "/Finance-team-project/static/media/hero-bg-desktop.8b256dd90e54a895c28f.png",
     "static/media/hero-bg-tablet.png": "/Finance-team-project/static/media/hero-bg-tablet.cf630f824e74a1888b93.png",
     "static/media/Unbounded-Medium.ttf": "/Finance-team-project/static/media/Unbounded-Medium.7c175c8bf950f747caf2.ttf",
@@ -17,16 +19,17 @@
     "static/media/bg-tablet.png": "/Finance-team-project/static/media/bg-tablet.3fc6c1c515420d40ec4b.png",
     "static/media/glyphicons-halflings-regular.ttf": "/Finance-team-project/static/media/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
     "static/media/glyphicons-halflings-regular.woff": "/Finance-team-project/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+    "static/media/one-more-sq-meter-2x.png": "/Finance-team-project/static/media/one-more-sq-meter-2x.6ce4af3b1d0fa9cd668c.png",
     "static/media/glyphicons-halflings-regular.eot": "/Finance-team-project/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
     "static/media/one-more-sq-meter.png": "/Finance-team-project/static/media/one-more-sq-meter.461fb7ef939628c36610.png",
     "static/media/glyphicons-halflings-regular.woff2": "/Finance-team-project/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "static/media/sprite.svg": "/Finance-team-project/static/media/sprite.5e6c44aeceff6934ae9b29639dadf3f8.svg",
     "index.html": "/Finance-team-project/index.html",
-    "main.687886ab.css.map": "/Finance-team-project/static/css/main.687886ab.css.map",
-    "main.2949394c.js.map": "/Finance-team-project/static/js/main.2949394c.js.map"
+    "main.b0a1587c.css.map": "/Finance-team-project/static/css/main.b0a1587c.css.map",
+    "main.a0f13ba1.js.map": "/Finance-team-project/static/js/main.a0f13ba1.js.map"
   },
   "entrypoints": [
-    "static/css/main.687886ab.css",
-    "static/js/main.2949394c.js"
+    "static/css/main.b0a1587c.css",
+    "static/js/main.a0f13ba1.js"
   ]
 }
