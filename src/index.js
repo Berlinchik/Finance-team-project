@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 
 import { App } from 'components/App';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import './assets/fonts/Roboto/Roboto-Regular.ttf';
 import './assets/fonts/Unbounded/Unbounded-Medium.ttf';
 import './assets/fonts/Lato/Lato-Black.ttf';
@@ -17,11 +17,11 @@ import './assets/fonts/Lato/Lato-Semibold.ttf';
 import './index.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename="/Finance-team-project">
+        <App />
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>
 );
