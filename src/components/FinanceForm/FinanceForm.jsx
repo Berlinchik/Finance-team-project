@@ -58,7 +58,7 @@ const OwnPlanSchema = Yup.object().shape({
 export const FinanceForm = () => {
   const dispatch = useDispatch();
   const plan = useSelector(selectPlan);
-  const savings = useSelector(selectSavings)
+  const savings = useSelector(selectSavings);
   const authorized = useSelector(selectAuthorized);
   const year = useSelector(selectYear);
   const month = useSelector(selectMonth);
@@ -104,24 +104,26 @@ export const FinanceForm = () => {
       ) {
         return false;
       }
+    }
+
+    return true;
   }
 
-  return true;
-}
-
-function isObject(object) {
-  return object != null && typeof object === 'object';
-}
+  function isObject(object) {
+    return object != null && typeof object === 'object';
+  }
 
   const getPrePlan = _.debounce(() => {
-    const { salary, passiveIncome, savings, cost, footage, procent } = formik.values;
-    authorized && !deepEqual(formik.values, formik.initialValues) && (
-        formik.touched.procent ||
+    const { salary, passiveIncome, savings, cost, footage, procent } =
+      formik.values;
+    authorized &&
+      !deepEqual(formik.values, formik.initialValues) &&
+      (formik.touched.procent ||
         formik.touched.cost ||
         formik.touched.savings ||
         formik.touched.passiveIncome ||
-        formik.touched.salary
-      ) && dispatch(
+        formik.touched.salary) &&
+      dispatch(
         prePostPlan({
           salary: +salary,
           passiveIncome: +passiveIncome,
@@ -133,18 +135,13 @@ function isObject(object) {
       );
   }, 1000);
   getPrePlan();
-  // console.log(formik.values.salary &&
-  //     formik.values.procent &&
-  //     formik.values.cost &&
-  //     formik.values.savings &&
-  //     formik.values.passiveIncome);
   return (
     <div className={s.Container}>
       <form className={s.PlanFormWrapper} onSubmit={formik.handleSubmit}>
         <TextDataInput
           label={'1. RFP of both spouses, ₴'}
           htmlFor={'salary'}
-          placeholder={'75 000'}
+          placeholder={'Enter a number'}
           id={'salary'}
           name={'salary'}
           onChange={formik.handleChange}
@@ -156,7 +153,7 @@ function isObject(object) {
         <TextDataInput
           label={'2. Passive income, months, ₴'}
           htmlFor={'passiveIncome'}
-          placeholder={'Enter text'}
+          placeholder={'Enter a number'}
           id={'passiveIncome'}
           name={'passiveIncome'}
           onChange={formik.handleChange}
@@ -171,7 +168,7 @@ function isObject(object) {
         <TextDataInput
           label={'3. Savings, ₴'}
           htmlFor={'savings'}
-          placeholder={'Enter text'}
+          placeholder={'Enter a number'}
           id={'savings'}
           name={'savings'}
           onChange={formik.handleChange}
@@ -185,7 +182,7 @@ function isObject(object) {
         <TextDataInput
           label={'4. Specify the cost of your future apartment, ₴'}
           htmlFor={'cost'}
-          placeholder={'90 000'}
+          placeholder={'Enter a number'}
           id={'cost'}
           name={'cost'}
           onChange={formik.handleChange}
@@ -198,7 +195,7 @@ function isObject(object) {
         <TextDataInput
           label={'5. Specify the number of sq.m. of your future apartment'}
           htmlFor={'footage'}
-          placeholder={'Enter text'}
+          placeholder={'Enter a number'}
           id={'footage'}
           name={'footage'}
           onChange={formik.handleChange}
@@ -211,7 +208,7 @@ function isObject(object) {
         <TextDataInput
           label={'6. Accumulation, %'}
           htmlFor={'procent'}
-          placeholder={'Enter text'}
+          placeholder={'Enter a number'}
           hint={
             'Specify the percentage that you would like to accumulate per month from the total amount of income and you will see when you reach the goal'
           }
