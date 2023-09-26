@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Finance-team-project/static/css/main.b0a1587c.css",
+    "main.css": "/Finance-team-project/static/css/main.1c5cca34.css",
     "main.js": "/Finance-team-project/static/js/main.517a2058.js",
     "static/media/hero-bg-tablet-2x.png": "/Finance-team-project/static/media/hero-bg-tablet-2x.4d7bd48f85bbd143b40b.png",
     "static/media/Lato-Semibold.ttf": "/Finance-team-project/static/media/Lato-Semibold.dab63590f439194ec956.ttf",
@@ -25,11 +25,11 @@
     "static/media/glyphicons-halflings-regular.woff2": "/Finance-team-project/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "static/media/sprite.svg": "/Finance-team-project/static/media/sprite.5e6c44aeceff6934ae9b29639dadf3f8.svg",
     "index.html": "/Finance-team-project/index.html",
-    "main.b0a1587c.css.map": "/Finance-team-project/static/css/main.b0a1587c.css.map",
+    "main.1c5cca34.css.map": "/Finance-team-project/static/css/main.1c5cca34.css.map",
     "main.517a2058.js.map": "/Finance-team-project/static/js/main.517a2058.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0a1587c.css",
+    "static/css/main.1c5cca34.css",
     "static/js/main.517a2058.js"
   ]
 }
