@@ -130,9 +130,8 @@
 }
 .icon_block {
   display: flex;
-
 }
-.icon_svg{
+.icon_svg {
   margin-right: 7px;
   cursor: pointer;
 }
@@ -184,10 +183,10 @@
 .expense_block {
   @include desktop {
     height: 420px;
-    overflow: scroll;
+    overflow: auto;
   }
   @include tablet {
     height: 420px;
-    overflow: scroll;
+    overflow: auto;
   }
 }
